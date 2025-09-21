@@ -1,338 +1,227 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Santhosh Adiga — Cybersecurity & Mobile Engineer</title>
-  <meta name="description" content="Santhosh Adiga — Multidisciplinary cybersecurity and mobile app expert. Founder of Anakramy. Penetration testing, mobile engineering, AI MDR."/>
-  <link rel="icon" href="data:,">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Santhosh Adiga — Portfolio</title>
   <style>
-    /* ---------- Palette (Anakramy) ---------- */
-    :root{
-      --primary:#031642;
-      --secondary:#8AA1DA;
-      --accent:#FF6F61;
-      --bg:#0b1220;
-      --card:#07132a;
-      --muted:#9fb7ff;
-      --glass: rgba(255,255,255,0.03);
-      --glass-2: rgba(255,255,255,0.02);
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+    body {
+      margin: 0;
+      font-family: "Courier New", monospace;
+      background: radial-gradient(circle at center, #0d0221, #0a0a2a, #000);
+      color: #d1c4ff;
+      overflow-x: hidden;
     }
 
-    /* ---------- Reset + Base ---------- */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background:
-        radial-gradient(800px 400px at 10% 10%, rgba(138,161,218,0.03), transparent),
-        linear-gradient(180deg, var(--bg), #020518 120%);
-      color: #d8eaff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:28px;
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
     }
 
-    /* ---------- Layout ---------- */
-    .wrap{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns: 360px 1fr; gap:20px; align-items:start; }
-    @media (max-width:960px){ .wrap{ grid-template-columns: 1fr; padding:18px } }
-
-    /* ---------- Sidebar ---------- */
-    .sidebar{
-      background: linear-gradient(180deg, rgba(3,22,66,0.6), rgba(6,12,24,0.6));
-      border-radius:14px; padding:20px; border:1px solid rgba(138,161,218,0.06);
-      box-shadow: 0 10px 30px rgba(2,6,18,0.6);
-      position:sticky; top:28px; height:calc(100vh - 56px); overflow:auto;
-    }
-    .avatar{
-      width:80px; height:80px; border-radius:14px; display:grid; place-items:center;
-      background: linear-gradient(135deg,var(--secondary), #b4c9ef); color:var(--primary); font-weight:800; font-size:20px;
-      box-shadow: 0 8px 30px rgba(138,161,218,0.06);
-      margin-bottom:12px;
-    }
-    .name{ font-size:20px; font-weight:800; letter-spacing:0.2px }
-    .tagline{ color:var(--muted); font-size:13px; margin-top:6px }
-
-    .contact{ margin-top:16px; display:flex; gap:10px; flex-direction:column; font-size:14px }
-    .contact a{ color:var(--muted); text-decoration:none }
-    .pill{ background:var(--glass); padding:8px 10px; border-radius:10px; font-weight:700; color:var(--secondary); display:inline-block; margin-top:12px }
-
-    .sidebar-section{ margin-top:18px }
-    .small{ color:var(--muted); font-size:13px }
-
-    /* ---------- Main content ---------- */
-    .main{
-      display:flex; flex-direction:column; gap:14px;
-    }
-    .header{
-      background: linear-gradient(90deg, rgba(138,161,218,0.03), rgba(255,111,97,0.02));
-      padding:14px; border-radius:12px; display:flex; justify-content:space-between; align-items:center; border:1px solid rgba(255,255,255,0.02);
-    }
-    .header .title{ font-weight:800; font-size:18px }
-    .actions{ display:flex; gap:8px }
-
-    .btn{
-      padding:8px 12px; border-radius:10px; border:none; cursor:pointer; font-weight:700;
-      background:var(--secondary); color:var(--primary);
-    }
-    .btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--muted) }
-    .btn.danger{ background:var(--accent); color:white }
-
-    /* ---------- Cards / sections ---------- */
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.02);
-      box-shadow: 0 8px 22px rgba(2,6,18,0.5);
-    }
-    .card h3{ margin:0 0 8px 0; font-size:16px; color:var(--secondary) }
-    .muted{ color:var(--muted); font-size:13px }
-
-    /* timeline */
-    .timeline{ display:flex; flex-direction:column; gap:12px }
-    .job{ display:grid; grid-template-columns: 1fr 100px; gap:12px; align-items:flex-start }
-    .job h4{ margin:0; font-size:15px }
-    .job .meta{ color:var(--muted); font-size:13px }
-
-    /* skills chips */
-    .chips{ display:flex; flex-wrap:wrap; gap:8px }
-    .chip{ background:var(--glass-2); padding:8px 10px; border-radius:999px; font-weight:700; color:var(--secondary); font-size:13px }
-
-    /* code / terminal style */
-    pre.code{
-      background:#00101a; color:#9fe3ff; padding:12px; border-radius:8px; overflow:auto; font-family:var(--mono); font-size:13px;
+    header h1 {
+      font-size: 2.5em;
+      color: #6f6fff;
+      text-shadow: 0 0 10px #8a2be2, 0 0 20px #00f, 0 0 40px #8a2be2;
+      margin: 0;
     }
 
-    /* achievements grid */
-    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:12px }
-    @media (max-width:560px){ .grid-2{ grid-template-columns: 1fr } }
-
-    /* Print */
-    @media print {
-      body{ background:white; color:black; padding:0 }
-      .wrap{ grid-template-columns: 1fr; }
-      .sidebar{ position:static; height:auto; box-shadow:none; border:none; background:transparent; padding:10px 0 }
-      .header, .card{ border:none; box-shadow:none; background:transparent; padding:0; }
-      .btn{ display:none }
+    header h2 {
+      color: #ff66ff;
+      text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff33cc;
+      margin: 5px 0;
     }
 
-    /* small UI touches */
-    .meta-row{ display:flex; gap:12px; align-items:center; color:var(--muted); font-size:13px }
-    .divider{ height:1px; background: linear-gradient(90deg, transparent, rgba(138,161,218,0.06), transparent); margin:12px 0; border-radius:2px }
-    .footer-small{ color:var(--muted); font-size:13px; text-align:center; margin-top:8px }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #6f6fff;
+      box-shadow: 0 0 20px #6f6fff;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .links {
+      margin-top: 10px;
+    }
+
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #8AA1DA;
+      font-weight: bold;
+      text-shadow: 0 0 10px #6f6fff;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(20, 10, 40, 0.8);
+      border: 1px solid #6f6fff44;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 0 20px #6f6fff44;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card h3 {
+      color: #ff66ff;
+      margin-bottom: 10px;
+    }
+
+    .scan-line {
+      position: absolute;
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to bottom, transparent, #6f6fff33, transparent);
+      animation: scan 4s linear infinite;
+    }
+
+    @keyframes scan {
+      0% { top: -50%; }
+      100% { top: 100%; }
+    }
+
+    /* Terminal styling */
+    .terminal {
+      background: #000;
+      color: #00ffcc;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      height: 200px;
+      overflow-y: auto;
+      border-radius: 6px;
+    }
+
+    canvas {
+      width: 100%;
+      height: 200px;
+      background: #0a0a2a;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap" role="main">
-    <!-- SIDEBAR -->
-    <aside class="sidebar" aria-label="profile sidebar">
-      <div class="avatar">SA</div>
-      <div class="name">Santhosh Adiga U</div>
-      <div class="tagline small">Multidisciplinary cybersecurity & mobile app expert</div>
+  <header>
+    <img src="dp.jpeg" alt="Santhosh Adiga" class="profile-pic"/>
+    <h1 id="typing"></h1>
+    <h2>Cybersecurity & Mobile Engineering Expert</h2>
+    <div class="links">
+      <a href="mailto:sadiga80@gmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/santhoshadiga" target="_blank">LinkedIn</a>
+      <a href="https://medium.com/@sadiga80" target="_blank">Medium</a>
+    </div>
+  </header>
 
-      <div class="contact sidebar-section">
-        <div class="small">📧 <a href="mailto:sadiga80@gmail.com">sadiga80@gmail.com</a></div>
-        <div class="small">📞 <a href="tel:+919739225131">+91 97392 25131</a></div>
-        <div class="small">LinkedIn • Medium</div>
-        <div class="pill">Founder • Anakramy</div>
-      </div>
+  <div class="dashboard">
+    <!-- About -->
+    <div class="card">
+      <div class="scan-line"></div>
+      <h3>Summary</h3>
+      <p>Multidisciplinary cybersecurity and mobile app expert with 10+ years of experience in mobile engineering and over 5 years in offensive security. Founder of Anakramy, an AI-driven cybersecurity company specializing in automated penetration testing and AI-based MDR.</p>
+    </div>
 
-      <div class="sidebar-section">
-        <div class="small">Summary</div>
-        <div class="muted" style="margin-top:6px; font-size:14px;">
-          Multidisciplinary cybersecurity and mobile app expert with 10+ years in mobile engineering and 5+ years in offensive security. Founder of Anakramy — AI-driven MDR & automated pentesting.
-        </div>
-      </div>
+    <!-- Skills Chart -->
+    <div class="card">
+      <div class="scan-line"></div>
+      <h3>Technical Skills</h3>
+      <canvas id="skillsChart"></canvas>
+    </div>
 
-      <div class="sidebar-section">
-        <div class="small">Education</div>
-        <div class="muted" style="margin-top:6px;">Bachelor of Engineering in Computer Science — 2013</div>
-      </div>
+    <!-- Terminal Achievements -->
+    <div class="card">
+      <div class="scan-line"></div>
+      <h3>Bug Bounty & Achievements</h3>
+      <div class="terminal" id="terminal"></div>
+    </div>
 
-      <div class="sidebar-section">
-        <div class="small">Tech Highlights</div>
-        <div class="chips" style="margin-top:8px">
-          <span class="chip">Python</span>
-          <span class="chip">Django</span>
-          <span class="chip">Flutter</span>
-          <span class="chip">Kotlin</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">Docker</span>
-          <span class="chip">Nmap</span>
-          <span class="chip">Burp Suite</span>
-        </div>
-      </div>
-
-      <div style="margin-top:18px" class="small">Download / Print resume</div>
-      <div style="margin-top:8px">
-        <button class="btn" onclick="window.print()">Download / Print</button>
-        <a class="btn ghost" href="mailto:sadiga80@gmail.com?subject=Resume%20Santhosh%20Adiga" style="margin-left:8px">Contact</a>
-      </div>
-
-      <div style="margin-top:auto" class="footer-small">Anakramy • AI-driven MDR • Prototype</div>
-    </aside>
-
-    <!-- MAIN -->
-    <main class="main">
-      <div class="header">
-        <div>
-          <div class="title">Santhosh Adiga — Cybersecurity & Mobile Engineering</div>
-          <div class="meta-row"><div class="small">Founder & CEO — Anakramy</div><div class="small">•</div><div class="small">Star Award (Maersk)</div></div>
-        </div>
-
-        <div class="actions">
-          <button class="btn" onclick="document.getElementById('contactModal').scrollIntoView({behavior:'smooth'})">Contact</button>
-          <button class="btn ghost" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">Work</button>
-          <button class="btn danger" onclick="document.getElementById('achievements').scrollIntoView({behavior:'smooth'})">Achievements</button>
-        </div>
-      </div>
-
-      <!-- EXPERIENCE / WORK -->
-      <section id="work" class="card" aria-labelledby="workHeading">
-        <h3 id="workHeading">Work Experience</h3>
-        <div class="timeline">
-          <div class="job">
-            <div>
-              <h4>Founder & CEO — Anakramy</h4>
-              <div class="meta">Aug 2024 – Present</div>
-              <div class="muted" style="margin-top:8px">
-                Founded Anakramy, an AI-based cybersecurity company focused on real-time MDR, automation and testing at scale. Launched Anakramy Bug Hunt and developed Anakramy Aegis (automated pentesting platform).
-                Led black-box & grey-box penetration tests across web, mobile, API, and cloud environments. Built reports with CVSS scoring, remediation guidance, and analyst & executive formats.
-              </div>
-            </div>
-            <div class="meta">Leadership</div>
-          </div>
-
-          <div class="job">
-            <div>
-              <h4>Principal Engineer — Fyers</h4>
-              <div class="meta">Sep 2023 – Aug 2024</div>
-              <div class="muted" style="margin-top:8px">
-                Architected a secure Trading Journal App, performed mobile & API security assessments, and mentored devs on secure coding and token handling.
-              </div>
-            </div>
-            <div class="meta">Mobile Security</div>
-          </div>
-
-          <div class="job">
-            <div>
-              <h4>Senior Software Engineer — AP Moller Maersk</h4>
-              <div class="meta">May 2021 – Aug 2023</div>
-              <div class="muted" style="margin-top:8px">
-                Integrated secure APIs for the Maersk App, supported incident response, and received the Star Award for technical excellence.
-              </div>
-            </div>
-            <div class="meta">Security & APIs</div>
-          </div>
-
-          <div class="job">
-            <div>
-              <h4>Lead Engineer — Aeione</h4>
-              <div class="meta">Jan 2020 – Apr 2021</div>
-              <div class="muted" style="margin-top:8px">
-                Stabilized and secured Spotlight app: secure storage, encrypted comms, authentication flows, secure code reviews, and mobile pentesting pipelines.
-              </div>
-            </div>
-            <div class="meta">Mobile</div>
-          </div>
-
-          <div class="job">
-            <div>
-              <h4>Software Engineer — Critical Start</h4>
-              <div class="meta">Mar 2019 – Dec 2019</div>
-              <div class="muted" style="margin-top:8px">
-                Built UI components for the Mobile SOC platform and supported Red Team tests with secure communication modules.
-              </div>
-            </div>
-            <div class="meta">SOC</div>
-          </div>
-
-          <div class="job">
-            <div>
-              <h4>Technical Associate — Accion Labs, Bangalore</h4>
-              <div class="meta">Feb 2015 – Feb 2019</div>
-              <div class="muted" style="margin-top:8px">
-                Developed Android FinTech apps, fixed critical security bugs (data leakage, SSL issues), and implemented secure transaction handling.
-              </div>
-            </div>
-            <div class="meta">Android</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SKILLS + TOOLS -->
-      <div class="grid-2">
-        <section class="card" aria-labelledby="skillsHeading">
-          <h3 id="skillsHeading">Technical Skills</h3>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <div style="flex:1; min-width:200px">
-              <div class="small">Offensive Security Tools</div>
-              <div class="muted" style="margin-top:8px">Nmap, Burp Suite, Nuclei, Gobuster, FFUF, John the Ripper, SQLMap, Nikto, Metasploit, Sublist3r, DNSenum</div>
-            </div>
-            <div style="flex:1; min-width:200px">
-              <div class="small">Languages & Frameworks</div>
-              <div class="muted" style="margin-top:8px">Python, Django, Java, Kotlin, Dart, Swift, JavaScript, TypeScript, Flutter, SwiftUI</div>
-            </div>
-          </div>
-
-          <div style="height:12px"></div>
-          <div class="small">DevOps & Backend</div>
-          <div class="muted">PostgreSQL, Celery, Redis, Docker, Git, Bitbucket, Jenkins</div>
-
-          <div style="height:12px"></div>
-          <div class="small">Other</div>
-          <div class="muted">Penetration Testing, Threat Modeling, Bug Bounty, Threat Intel, CVSS, Report Writing</div>
-        </section>
-
-        <section class="card" id="achievements" aria-labelledby="achieveHeading">
-          <h3 id="achieveHeading">Bug Bounty & Achievements</h3>
-          <ul style="margin-top:8px; padding-left:18px; color:var(--muted)">
-            <li>Independent Security Researcher — HackerOne, YesWeHack, Intigriti (5+ years)</li>
-            <li>100+ valid vulnerability reports across platforms (IDOR, XSS, SQLi, CSRF, SSRF, Auth bypass)</li>
-            <li>Anakramy Guard: AI-powered MDR platform for real-time detection</li>
-            <li>Anakramy Aegis: Automated pentesting tool identifying 40+ vulnerability types</li>
-            <li>Star Award recipient at Maersk; led teams up to 20 engineers</li>
-          </ul>
-        </section>
-      </div>
-
-      <!-- PROJECTS / HIGHLIGHTS -->
-      <section class="card">
-        <h3>Selected Projects & Contributions</h3>
-        <div class="muted" style="margin-top:8px">
-          <strong>Anakramy Aegis</strong> — Automated penetration testing platform (PDF/HTML dual reports, async workers, vulnerability exploitation modules).<br/><br/>
-          <strong>Anakramy Guard</strong> — AI-driven Managed Detection & Response product with YARA, threat intel, and real-time alerting.<br/><br/>
-          Developed reusable Nuclei templates, custom scanners and automated report generation for enterprise-grade findings.
-        </div>
-      </section>
-
-      <!-- CLOSING / FOOTER -->
-      <section class="card" id="contactModal">
-        <h3>Contact</h3>
-        <div class="muted" style="margin-top:8px">
-          📧 <a href="mailto:sadiga80@gmail.com">sadiga80@gmail.com</a><br/>
-          📞 <a href="tel:+919739225131">+91 97392 25131</a><br/>
-          LinkedIn • Medium<br/><br/>
-          I'm available for advisory, enterprise pentesting, AI security tooling collaborations, and speaking sessions.
-        </div>
-      </section>
-
-    </main>
+    <!-- Work Experience -->
+    <div class="card">
+      <div class="scan-line"></div>
+      <h3>Work Experience</h3>
+      <ul>
+        <li><b>Founder & CEO</b> — Anakramy (2024–Present)</li>
+        <li><b>Principal Engineer</b> — Fyers (2023–2024)</li>
+        <li><b>Senior Software Engineer</b> — Maersk (2021–2023)</li>
+        <li><b>Lead Engineer</b> — Aeione (2020–2021)</li>
+        <li><b>Software Engineer</b> — Critical Start (2019)</li>
+        <li><b>Technical Associate</b> — Accion Labs (2015–2019)</li>
+      </ul>
+    </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // small nicety: add keyboard 'p' to print and smooth scroll for internal links
-    window.addEventListener('keydown', (e) => {
-      if (e.key.toLowerCase() === 'p') window.print();
+    // Typing effect
+    const text = "Santhosh Adiga";
+    let idx = 0;
+    function typingEffect() {
+      if (idx < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(idx);
+        idx++;
+        setTimeout(typingEffect, 150);
+      }
+    }
+    typingEffect();
+
+    // Skills Chart
+    const ctx = document.getElementById("skillsChart");
+    new Chart(ctx, {
+      type: "radar",
+      data: {
+        labels: ["Python", "Django", "Mobile (Kotlin/Swift/Flutter)", "Pentesting", "Bug Bounty", "DevOps"],
+        datasets: [{
+          label: "Skill Level",
+          data: [95, 90, 85, 95, 90, 80],
+          backgroundColor: "rgba(111,111,255,0.2)",
+          borderColor: "#6f6fff",
+          pointBackgroundColor: "#ff66ff"
+        }]
+      },
+      options: {
+        scales: {
+          r: {
+            angleLines: { color: "#6f6fff44" },
+            grid: { color: "#6f6fff22" },
+            pointLabels: { color: "#d1c4ff" },
+            ticks: { color: "#d1c4ff" }
+          }
+        },
+        plugins: { legend: { labels: { color: "#ff66ff" } } }
+      }
     });
-    // Add subtle "copy email" on click
-    document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{
-      a.addEventListener('click', ()=> {
-        // let mailto open naturally; we can also copy
-        try { navigator.clipboard && navigator.clipboard.writeText(a.href.replace('mailto:','')); } catch(e){}
-      });
-    });
+
+    // Terminal Achievements
+    const terminal = document.getElementById("terminal");
+    const achievements = [
+      "100+ vulnerabilities reported on HackerOne, YesWeHack, Intigriti",
+      "Specialized in API pentesting & mobile reverse engineering",
+      "Star Award at Maersk for technical excellence",
+      "Anakramy Guard: AI-powered MDR",
+      "Anakramy Aegis: Automated pentesting tool"
+    ];
+
+    async function typeLines(lines) {
+      for (const line of lines) {
+        for (let i = 0; i < line.length; i++) {
+          terminal.innerHTML += line[i];
+          terminal.scrollTop = terminal.scrollHeight;
+          await new Promise(r => setTimeout(r, 40));
+        }
+        terminal.innerHTML += "<br/>";
+        await new Promise(r => setTimeout(r, 600));
+      }
+    }
+    typeLines(achievements);
   </script>
 </body>
 </html>
