@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Santhosh Adiga — Portfolio</title>
+  <title>Santhosh Adiga — Cybersecurity Portfolio</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
     body {
       margin: 0;
       font-family: "Courier New", monospace;
       background: radial-gradient(circle at center, #0d0221, #0a0a2a, #000);
       color: #d1c4ff;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
     header {
@@ -39,18 +44,45 @@
       box-shadow: 0 0 20px #6f6fff;
       margin: 20px auto;
       display: block;
+      object-fit: cover;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
     .links {
       margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .links a {
-      margin: 0 10px;
       text-decoration: none;
       color: #8AA1DA;
       font-weight: bold;
       text-shadow: 0 0 10px #6f6fff;
+      transition: all 0.3s ease;
+      padding: 5px 10px;
+      border: 1px solid #6f6fff44;
+      border-radius: 4px;
+    }
+
+    .links a:hover {
+      color: #ff66ff;
+      box-shadow: 0 0 10px #6f6fff;
     }
 
     .dashboard {
@@ -58,6 +90,8 @@
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 20px;
       padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .card {
@@ -72,7 +106,10 @@
 
     .card h3 {
       color: #ff66ff;
-      margin-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #6f6fff44;
+      padding-bottom: 8px;
     }
 
     .scan-line {
@@ -83,6 +120,7 @@
       height: 50%;
       background: linear-gradient(to bottom, transparent, #6f6fff33, transparent);
       animation: scan 4s linear infinite;
+      pointer-events: none;
     }
 
     @keyframes scan {
@@ -96,27 +134,92 @@
       color: #00ffcc;
       font-family: monospace;
       font-size: 14px;
-      padding: 10px;
-      height: 200px;
+      padding: 15px;
+      height: 250px;
       overflow-y: auto;
       border-radius: 6px;
+      line-height: 1.5;
     }
 
-    canvas {
+    .terminal-line {
+      margin-bottom: 5px;
+    }
+
+    .chart-container {
+      position: relative;
+      height: 300px;
       width: 100%;
-      height: 200px;
-      background: #0a0a2a;
-      border-radius: 6px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .job {
+      margin-bottom: 20px;
+    }
+
+    .job-title {
+      font-weight: bold;
+      color: #8AA1DA;
+    }
+
+    .job-date {
+      color: #ff66ff;
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+
+    .skill-category {
+      margin-bottom: 15px;
+    }
+
+    .skill-category h4 {
+      color: #8AA1DA;
+      margin-bottom: 5px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: rgba(111, 111, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+      
+      .chart-container {
+        height: 250px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="dp.jpeg" alt="Santhosh Adiga" class="profile-pic"/>
+    <img src="dp.jpeg" alt="Santhosh Adiga" class="profile-pic" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%22150%22%20viewBox%3D%220%200%20150%20150%22%3E%3Crect%20fill%3D%22%236f6fff%22%20width%3D%22150%22%20height%3D%22150%22%2F%3E%3Ctext%20fill%3D%22%23ffffff%22%20font-family%3D%22Courier%20New%22%20font-size%3D%2220%22%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%3ESA%3C%2Ftext%3E%3C%2Fsvg%3E'"/>
     <h1 id="typing"></h1>
     <h2>Cybersecurity & Mobile Engineering Expert</h2>
+    
+    <div class="contact-info">
+      <div class="contact-item">📧 sadiga80@gmail.com</div>
+      <div class="contact-item">📞 +91 9739225131</div>
+    </div>
+    
     <div class="links">
-      <a href="mailto:sadiga80@gmail.com">📧 Email</a>
+      <a href="mailto:sadiga80@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/santhoshadiga" target="_blank">LinkedIn</a>
       <a href="https://medium.com/@sadiga80" target="_blank">Medium</a>
     </div>
@@ -126,15 +229,82 @@
     <!-- About -->
     <div class="card">
       <div class="scan-line"></div>
-      <h3>Summary</h3>
-      <p>Multidisciplinary cybersecurity and mobile app expert with 10+ years of experience in mobile engineering and over 5 years in offensive security. Founder of Anakramy, an AI-driven cybersecurity company specializing in automated penetration testing and AI-based MDR.</p>
+      <h3>Professional Summary</h3>
+      <p>Multidisciplinary cybersecurity and mobile app expert with 10+ years of experience in mobile engineering and over 5 years in offensive security. Founder of Anakramy, an AI-driven cybersecurity company specializing in automated penetration testing and AI-based MDR. Demonstrated ability to deliver actionable insights and collaborate across business functions to elevate organizational security posture.</p>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="card">
+      <div class="scan-line"></div>
+      <h3>Technical Skills</h3>
+      
+      <div class="skill-category">
+        <h4>Offensive Security Tools</h4>
+        <div class="skills-list">
+          <span class="skill-tag">Nmap</span>
+          <span class="skill-tag">Burp Suite</span>
+          <span class="skill-tag">Nuclei</span>
+          <span class="skill-tag">Gobuster</span>
+          <span class="skill-tag">FFUF</span>
+          <span class="skill-tag">John the Ripper</span>
+          <span class="skill-tag">SQLMap</span>
+          <span class="skill-tag">Nikto</span>
+          <span class="skill-tag">Metasploit</span>
+          <span class="skill-tag">Sublist3r</span>
+          <span class="skill-tag">DNSenum</span>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h4>Languages & Frameworks</h4>
+        <div class="skills-list">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">Dart</span>
+          <span class="skill-tag">Swift</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Flutter</span>
+          <span class="skill-tag">Swift UI</span>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h4>DevOps & Backend</h4>
+        <div class="skills-list">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Celery</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Bitbucket</span>
+          <span class="skill-tag">Jenkins</span>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h4>Other</h4>
+        <div class="skills-list">
+          <span class="skill-tag">Penetration Testing</span>
+          <span class="skill-tag">Threat Modeling</span>
+          <span class="skill-tag">Bug Bounty Programs</span>
+          <span class="skill-tag">Threat Intelligence</span>
+          <span class="skill-tag">Vulnerability Reporting</span>
+          <span class="skill-tag">CVSS Scoring</span>
+          <span class="skill-tag">Report Writing</span>
+        </div>
+      </div>
     </div>
 
     <!-- Skills Chart -->
     <div class="card">
       <div class="scan-line"></div>
-      <h3>Technical Skills</h3>
-      <canvas id="skillsChart"></canvas>
+      <h3>Core Competencies</h3>
+      <div class="chart-container">
+        <canvas id="skillsChart"></canvas>
+      </div>
     </div>
 
     <!-- Terminal Achievements -->
@@ -148,13 +318,98 @@
     <div class="card">
       <div class="scan-line"></div>
       <h3>Work Experience</h3>
+      
+      <div class="job">
+        <div class="job-title">Founder & CEO — Anakramy</div>
+        <div class="job-date">August 2024 – Present</div>
+        <ul>
+          <li>Founded Anakramy, an AI-based cybersecurity company focused on real-time MDR, automation, and testing at scale</li>
+          <li>Launched Anakramy Bug Hunt, offering high-quality pentesting and bug bounty services to enterprise clients</li>
+          <li>Personally led and conducted black-box and grey-box penetration tests across web apps, mobile apps, APIs, and cloud environments</li>
+          <li>Developed Anakramy Aegis, an automated pentesting platform detecting 40+ vulnerabilities with dual report generation</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <div class="job-title">Principal Engineer — Fyers</div>
+        <div class="job-date">September 2023 – August 2024</div>
+        <ul>
+          <li>Architected the Trading Journal App and ensured secure coding practices were followed</li>
+          <li>Conducted periodic security assessments of mobile codebase and API integrations</li>
+          <li>Mentored developers on identifying and patching vulnerabilities</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <div class="job-title">Senior Software Engineer — AP Moller Maersk</div>
+        <div class="job-date">May 2021 – August 2023</div>
+        <ul>
+          <li>Integrated secure APIs and third-party modules in the Maersk App</li>
+          <li>Supported internal incident response teams with app-related findings</li>
+          <li>Received the Star Award for exceptional performance</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <div class="job-title">Lead Engineer — Aeione</div>
+        <div class="job-date">January 2020 – April 2021</div>
+        <ul>
+          <li>Stabilized and secured Spotlight app, implementing secure storage and encrypted communications</li>
+          <li>Led secure code reviews and mobile penetration testing in CI/CD pipelines</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <div class="job-title">Software Engineer — Critical Start</div>
+        <div class="job-date">March 2019 – December 2019</div>
+        <ul>
+          <li>Built UI components for Mobile SOC, the world's first mobile cybersecurity response platform</li>
+          <li>Supported Red Team test cases by developing secure communication modules</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <div class="job-title">Technical Associate — Accion Labs, Bangalore</div>
+        <div class="job-date">February 2015 – February 2019</div>
+        <ul>
+          <li>Developed multiple Android applications in the FinTech space with secure transaction handling</li>
+          <li>Fixed critical security bugs related to data leakage and SSL implementation flaws</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education & Additional Info -->
+    <div class="card">
+      <div class="scan-line"></div>
+      <h3>Education & Credentials</h3>
+      <p><strong>Bachelor of Engineering in Computer Science</strong> — 2013</p>
+      
+      <h4 style="margin-top: 20px;">Bug Bounty Platforms</h4>
+      <div class="skills-list">
+        <span class="skill-tag">HackerOne</span>
+        <span class="skill-tag">YesWeHack</span>
+        <span class="skill-tag">Intigriti</span>
+      </div>
+      
+      <h4 style="margin-top: 20px;">Specializations</h4>
       <ul>
-        <li><b>Founder & CEO</b> — Anakramy (2024–Present)</li>
-        <li><b>Principal Engineer</b> — Fyers (2023–2024)</li>
-        <li><b>Senior Software Engineer</b> — Maersk (2021–2023)</li>
-        <li><b>Lead Engineer</b> — Aeione (2020–2021)</li>
-        <li><b>Software Engineer</b> — Critical Start (2019)</li>
-        <li><b>Technical Associate</b> — Accion Labs (2015–2019)</li>
+        <li>API pentesting & mobile reverse engineering</li>
+        <li>Developed personal scripts and Nuclei templates</li>
+        <li>Triage-ready reporting with clear PoC videos and remediation guidance</li>
+      </ul>
+    </div>
+
+    <!-- Major Achievements -->
+    <div class="card">
+      <div class="scan-line"></div>
+      <h3>Major Achievements</h3>
+      <ul>
+        <li>Anakramy Guard: AI-powered MDR platform for real-time threat detection</li>
+        <li>Anakramy Aegis: Automated penetration testing tool identifying 40+ vulnerabilities</li>
+        <li>100+ vulnerability reports submitted via HackerOne, YesWeHack, and Intigriti</li>
+        <li>Launched Human Firewall awareness initiative targeting social engineering defenses</li>
+        <li>Star Award recipient at Maersk for technical excellence</li>
+        <li>Led and mentored teams of up to 20 engineers in various roles</li>
       </ul>
     </div>
   </div>
@@ -173,30 +428,55 @@
     }
     typingEffect();
 
-    // Skills Chart
-    const ctx = document.getElementById("skillsChart");
+    // Skills Chart - Fixed to prevent overflow
+    const ctx = document.getElementById('skillsChart').getContext('2d');
     new Chart(ctx, {
       type: "radar",
       data: {
-        labels: ["Python", "Django", "Mobile (Kotlin/Swift/Flutter)", "Pentesting", "Bug Bounty", "DevOps"],
+        labels: ["Mobile Engineering", "Penetration Testing", "Python/Django", "Bug Bounty", "API Security", "DevOps"],
         datasets: [{
-          label: "Skill Level",
-          data: [95, 90, 85, 95, 90, 80],
+          label: "Expertise Level",
+          data: [95, 95, 90, 90, 85, 80],
           backgroundColor: "rgba(111,111,255,0.2)",
           borderColor: "#6f6fff",
-          pointBackgroundColor: "#ff66ff"
+          pointBackgroundColor: "#ff66ff",
+          pointBorderColor: "#fff",
+          pointHoverRadius: 6
         }]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           r: {
             angleLines: { color: "#6f6fff44" },
             grid: { color: "#6f6fff22" },
-            pointLabels: { color: "#d1c4ff" },
-            ticks: { color: "#d1c4ff" }
+            pointLabels: { 
+              color: "#d1c4ff",
+              font: {
+                size: 11,
+                family: "'Courier New', monospace"
+              }
+            },
+            ticks: { 
+              color: "#d1c4ff",
+              backdropColor: "transparent",
+              maxTicksLimit: 5
+            },
+            suggestedMin: 50,
+            suggestedMax: 100
           }
         },
-        plugins: { legend: { labels: { color: "#ff66ff" } } }
+        plugins: { 
+          legend: { 
+            labels: { 
+              color: "#ff66ff",
+              font: {
+                family: "'Courier New', monospace"
+              }
+            } 
+          } 
+        }
       }
     });
 
@@ -205,22 +485,52 @@
     const achievements = [
       "100+ vulnerabilities reported on HackerOne, YesWeHack, Intigriti",
       "Specialized in API pentesting & mobile reverse engineering",
+      "Developed personal scripts and Nuclei templates for automation",
+      "Triage-ready reporting with PoC videos and remediation guidance",
       "Star Award at Maersk for technical excellence",
-      "Anakramy Guard: AI-powered MDR",
-      "Anakramy Aegis: Automated pentesting tool"
+      "Anakramy Guard: AI-powered MDR platform",
+      "Anakramy Aegis: Automated pentesting tool (40+ vulnerabilities)",
+      "Launched Human Firewall awareness initiative"
     ];
 
     async function typeLines(lines) {
       for (const line of lines) {
+        const lineDiv = document.createElement('div');
+        lineDiv.className = 'terminal-line';
+        terminal.appendChild(lineDiv);
+        
         for (let i = 0; i < line.length; i++) {
-          terminal.innerHTML += line[i];
+          lineDiv.innerHTML += line[i];
           terminal.scrollTop = terminal.scrollHeight;
           await new Promise(r => setTimeout(r, 40));
         }
-        terminal.innerHTML += "<br/>";
         await new Promise(r => setTimeout(r, 600));
       }
+      
+      // Add blinking cursor after typing is complete
+      const cursor = document.createElement('span');
+      cursor.className = 'cursor';
+      cursor.innerHTML = '▋';
+      cursor.style.animation = 'blink 1s infinite';
+      terminal.appendChild(cursor);
+      
+      // Add CSS for blinking animation
+      const style = document.createElement('style');
+      style.innerHTML = `
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+        .cursor {
+          display: inline-block;
+          width: 8px;
+          background-color: #00ffcc;
+          margin-left: 2px;
+        }
+      `;
+      document.head.appendChild(style);
     }
+    
     typeLines(achievements);
   </script>
 </body>
